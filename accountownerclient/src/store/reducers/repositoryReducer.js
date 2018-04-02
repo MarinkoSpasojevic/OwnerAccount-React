@@ -1,22 +1,14 @@
 import * as actionTypes from '../actions/actionTypes';
 
 const initialState = {
-    dataArray: [],
-    dataObject: {},
+    data: null,
     showSuccessModal: false
 }
 
-const executeGetDataArraySuccess = (state, action) => {
+const executeGetDataSuccess = (state, action) => {
     return {
         ...state,
-        dataArray: action.dataArray
-    }
-}
-
-const executeGetDataObjectSuccess = (state, action) => {
-    return {
-        ...state,
-        dataObject: action.dataObject
+        dataArray: action.data
     }
 }
 
@@ -45,8 +37,6 @@ const reducer = (state = initialState, action) => {
     switch (action.type) {
         case actionTypes.GET_DATA_ARRAY_SUCCESS:
             return executeGetDataArraySuccess(state, action);
-        case actionTypes.GET_DATA_OBJECT_SUCCESS:
-            return executeGetDataObjectSuccess(state, action);
         case actionTypes.POST_DATA_SUCCESS:
             return executePostDataSuccess(state, action);
         case actionTypes.PUT_DATA_SUCCESS:

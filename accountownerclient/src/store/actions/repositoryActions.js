@@ -1,10 +1,10 @@
 import * as actionTypes from './actionTypes';
 import axios from '../../Axios/axios';
 
-const getDataArraySuccess = (dataArray) => {
+const getDataSuccess = (data) => {
     return {
-        type: actionTypes.GET_DATA_ARRAY_SUCCESS,
-        dataArray: dataArray
+        type: actionTypes.GET_DATA_SUCCESS,
+        data: data
     }
 }
 
@@ -12,26 +12,7 @@ export const getDataArray = (url, props) => {
     return (dispatch) => {
         axios.get(url)
         .then(response => {
-            dispatch(getDataArraySuccess(response.data));
-        })
-        .catch(error => {
-            //TODO: handle the error when implemented
-        })
-    }
-}
-
-const getDataObjectSuccess = (data) => {
-    return {
-        type: actionTypes.GET_DATA_OBJECT_SUCCESS,
-        dataObject: data
-    }
-}
-
-export const getDataObject = (url, props) => {
-    return (dispatch) => {
-        axios.get(url)
-        .then(response => {
-            dispatch(getDataObjectSuccess(response.data));
+            dispatch(getDataSuccess(response.data));
         })
         .catch(error => {
             //TODO: handle the error when implemented
