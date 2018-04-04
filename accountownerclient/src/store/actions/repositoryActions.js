@@ -1,5 +1,5 @@
 import * as actionTypes from './actionTypes';
-import axios from '../../Axios/axios';
+import axios from '../../axios/aixos';
 
 const getDataSuccess = (data) => {
     return {
@@ -8,7 +8,7 @@ const getDataSuccess = (data) => {
     }
 }
 
-export const getDataArray = (url, props) => {
+export const getData = (url, props) => {
     return (dispatch) => {
         axios.get(url)
         .then(response => {
