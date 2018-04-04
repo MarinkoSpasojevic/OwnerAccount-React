@@ -35,8 +35,8 @@ const executeDeleteDataSuccess = (state, action) => {
 
 const reducer = (state = initialState, action) => {
     switch (action.type) {
-        case actionTypes.GET_DATA_ARRAY_SUCCESS:
-            return executeGetDataArraySuccess(state, action);
+        case actionTypes.GET_DATA_SUCCESS:
+            return executeGetDataSuccess(state, action);
         case actionTypes.POST_DATA_SUCCESS:
             return executePostDataSuccess(state, action);
         case actionTypes.PUT_DATA_SUCCESS:
