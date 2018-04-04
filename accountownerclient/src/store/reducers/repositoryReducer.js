@@ -8,7 +8,7 @@ const initialState = {
 const executeGetDataSuccess = (state, action) => {
     return {
         ...state,
-        dataArray: action.data
+        data: action.data
     }
 }
 
